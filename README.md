@@ -8,21 +8,18 @@ This project explores a global cities population dataset to answer a focused res
 
 The analysis also compares the size of the European subset against the global dataset and demonstrates interactive and Voronoi-based mapping techniques for urban geography.
 
----
-
 ## 2. Dataset Source and Usage Permissions
 
 - **Dataset name:** `world_cities_pop.csv` (world cities population dataset)
-- **Source:** Public world cities database — please download it separately (see "How to Run" below).
-- **License / Permission:** Public domain / free for educational and non-commercial use. No personally identifiable information (PII) is included.
+- **Source:** Provided by CISC7204 course materials.
+- **License / Permission:** Used for educational purposes as part of CISC7204 coursework. No personally identifiable information (PII) is included.
 - **Note:** The dataset is approximately 156 MB and is **not included** in this repository because it exceeds GitHub's 100 MB file size limit.
 - **Data quality note:** Population values for some small cities are recorded as `NaN` (missing), which is preserved as-is in the analysis.
-
----
 
 ## 3. Methods and Tools
 
 ### Tools
+
 - **Language:** Python 3.x
 - **Environment:** Jupyter Notebook / VS Code
 - **Libraries:**
@@ -33,6 +30,7 @@ The analysis also compares the size of the European subset against the global da
   - `IPython.display` — inline animation of frames in Jupyter
 
 ### Methods
+
 1. **Data loading and inspection** — read the CSV with `pandas`, rename `Latitude`/`Longitude` to `lat`/`lon`.
 2. **Filtering by continent** — use a manually defined list of European country codes to extract the European subset.
 3. **Filtering by city name** — extract European cities whose names start with "Z".
@@ -41,20 +39,18 @@ The analysis also compares the size of the European subset against the global da
 6. **Voronoi diagram** — compute Voronoi cells clipped to a bounding envelope and overlay city points.
 7. **Interactive filter layer** — simulate stepping through starting letters (A–F) by redrawing the map frame-by-frame in the notebook.
 
----
-
 ## 4. Key Findings and Limitation
 
 ### Key Findings
+
 - The full dataset contains **3,173,958** city records, of which **898,604** are European cities (about **28%** of the global dataset).
 - Among European cities, only a small fraction have names starting with the letter **"Z"**, and these are concentrated in a few countries rather than evenly spread across the continent.
 - The **Voronoi visualization** shows that Z-cities are spatially sparse, with each Voronoi cell covering a relatively large area — reflecting low urban density for this naming subset.
 - Population values for many small Z-cities are **missing (`NaN`)**, which limits any population-based comparison.
 
 ### Limitation
-The analysis is limited by the dataset's **missing population values** for many small cities and by the use of a **hard-coded country-code list** to define "Europe," which may exclude or misclassify some territories. The interactive visualization is also simulated frame-by-frame in the notebook and is not truly interactive outside an interactive matplotlib backend.
 
----
+The analysis is limited by the dataset's **missing population values** for many small cities and by the use of a **hard-coded country-code list** to define "Europe," which may exclude or misclassify some territories. The interactive visualization is also simulated frame-by-frame in the notebook and is not truly interactive outside an interactive matplotlib backend.
 
 ## 5. How to Run the Analysis
 
@@ -89,31 +85,36 @@ Or open `analysis.ipynb` directly in VS Code and run all cells.
 
 > For a truly interactive version (real key presses instead of stepped frames), run the notebook with an interactive backend, e.g. add `%matplotlib tk` before the `FilterLayer` section.
 
+## 6. Visualizations
 
+### Figure 1 — Dot density plot of European cities starting with "Z"
 
-##6. Visualizations
-Figure 1 — Dot density plot of European cities starting with "Z"
-https://image1.png/
+![Dot density plot](fig1.png)
 
-Each red point is a European city whose name starts with "Z". The yellow tooltip shows the country code and city name on hover.
+*Each red point is a European city whose name starts with "Z". The yellow tooltip shows the country code and city name on hover.*
 
-Figure 2 — Voronoi visualization of Z-cities in Europe
-https://image2.png/
+### Figure 2 — Voronoi visualization of Z-cities in Europe
 
-Voronoi cells (red gradient) partition the map around each Z-city (blue points), illustrating the spatial coverage and sparsity of this subset.
+![Voronoi plot](fig2.png)
 
-##7. Repository Structure
-text
+*Voronoi cells (red gradient) partition the map around each Z-city (blue points), illustrating the spatial coverage and sparsity of this subset.*
+
+## 7. Repository Structure
+
+```
 data-science-project/
 ├── analysis.ipynb          # Main notebook with all analysis and visualizations
 ├── requirements.txt        # Python dependencies
-├── image1.png              # Dot density visualization
-├── image2.png              # Voronoi visualization
+├── fig1.png                # Dot density visualization
+├── fig2.png                # Voronoi visualization
 ├── .gitignore              # Excludes the large dataset
 └── README.md               # This file
-Note: world_cities_pop.csv is intentionally excluded via .gitignore because of its size. See Step 3 above to download it.
+```
 
-##8. Author
-dee663385
+> **Note:** `world_cities_pop.csv` is intentionally excluded via `.gitignore` because of its size. See Step 3 above to download it.
+
+## 8. Author
+
+**dee663385**
 CISC7204 — Data Science
-https://github.com/dee663385
+[https://github.com/dee663385](https://github.com/dee663385)
