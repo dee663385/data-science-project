@@ -59,27 +59,37 @@ The analysis is limited by the dataset's **missing population values** for many 
 ## 5. How to Run the Analysis
 
 ### Step 1 — Clone the repository
+
 ```bash
 git clone https://github.com/dee663385/data-science-project.git
 cd data-science-project
+```
 
-###Step 2 — Install dependencies
-bash
+### Step 2 — Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-###Step 3 — Download the dataset
-The dataset world_cities_pop.csv (~156 MB) is not included in this repository because it exceeds GitHub's file size limit.
+### Step 3 — Download the dataset
+
+The dataset `world_cities_pop.csv` (~156 MB) is **not included** in this repository because it exceeds GitHub's file size limit.
 
 Download it from: Provided by CISC7204 course materials.
 
-Then place world_cities_pop.csv in the same folder as analysis.ipynb.
+Then place `world_cities_pop.csv` in the same folder as `analysis.ipynb`.
 
-###Step 4 — Launch the notebook
-bash
+### Step 4 — Launch the notebook
+
+```bash
 jupyter notebook analysis.ipynb
-Or open analysis.ipynb directly in VS Code and run all cells.
+```
 
-For a truly interactive version (real key presses instead of stepped frames), run the notebook with an interactive backend, e.g. add %matplotlib tk before the FilterLayer section.
+Or open `analysis.ipynb` directly in VS Code and run all cells.
+
+> For a truly interactive version (real key presses instead of stepped frames), run the notebook with an interactive backend, e.g. add `%matplotlib tk` before the `FilterLayer` section.
+
+
 
 ##6. Visualizations
 Figure 1 — Dot density plot of European cities starting with "Z"
