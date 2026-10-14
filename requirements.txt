@@ -1,0 +1,5 @@
+geopandas==1.2.0
+ipython==8.12.3
+matplotlib==3.11.2
+Requests==2.34.2
+Shapely==2.2.0
